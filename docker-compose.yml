@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  timer-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4829:4829"
+    restart: unless-stopped
+    environment:
+      - PORT=4829
+      - NODE_ENV=production
